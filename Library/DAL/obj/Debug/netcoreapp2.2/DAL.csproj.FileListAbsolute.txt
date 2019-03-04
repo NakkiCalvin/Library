@@ -1,0 +1,16 @@
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\BLL.dll
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csprojAssemblyReference.cache
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csproj.CoreCompileInputs.cache
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.AssemblyInfoInputs.cache
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.AssemblyInfo.cs
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\DAL.deps.json
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\DAL.dll
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\DAL.pdb
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\BLL.pdb
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csproj.CopyComplete
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.dll
+D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.pdb
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.Relational.xml
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.xml
