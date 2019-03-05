@@ -12114,11 +12114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
+      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
+      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorys\\LibraryApplication\\Library\\API\\obj\\",
+      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12137,11 +12137,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
             },
-            "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj"
             }
           }
         }
