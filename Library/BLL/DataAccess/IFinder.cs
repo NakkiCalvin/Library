@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BLL.DataAccess
 {
-    public interface IFinder<T> where T : class
+    public interface IFinder<T, U> where T : class
     {
-        void Find(T entity);
+        T Find(U entity);
         void GetAll();
     }
 }

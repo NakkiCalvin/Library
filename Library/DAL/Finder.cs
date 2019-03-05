@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
-    public class Finder<T> : IFinder<T> where T : class
+    public class Finder<T, U> : IFinder<T, U> where T : class
     {
         private readonly DbSet<T> _entity;
 
@@ -16,9 +16,9 @@ namespace DAL
             _entity = entity;
         }
 
-        public void Find(T key)
+        public T Find(U key)
         {
-            _entity.Find(key);
+            return _entity.Find(key);
         }
 
         public void GetAll()

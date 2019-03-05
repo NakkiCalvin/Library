@@ -44,18 +44,16 @@ namespace XUnitTest
         public void CheckContains()
         {
             IUnitOfWork ufo = new UnitOfWork(context);
-            var finder = new Finder<Book>(context.Books); 
+            var finder = new Finder<Book, int>(context.Books); 
             var repository = new Repository<Book>(context.Books);
 
             var service = new MyService(ufo, repository);
             service.Add("Bookname");
 
             var findBookFinder = new MyFinder(finder);
+            findBookFinder.FindBook(1);
 
-
-            Assert.NotNull(context.Books.Where(p => p.Name == "Bookname"));
+            Assert.NotNull(findBookFinder.FindBook(1));
         }
-
-
     }
 }

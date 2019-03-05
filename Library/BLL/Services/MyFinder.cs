@@ -8,17 +8,17 @@ namespace BLL.Services
 {
     public class MyFinder
     {
-        private readonly IFinder<Book> _finder;
+        private readonly IFinder<Book, int> _finder;
 
-        public MyFinder(IFinder<Book> finder)
+        public MyFinder(IFinder<Book, int> finder)
         {
             _finder = finder;
         }
 
-        public void FindBook(int id)
+        public Book FindBook(int id)
         {
-            _finder.Find(id);
+            Book actualBook = _finder.Find(id);
+            return actualBook;
         }
-
     }
 }
