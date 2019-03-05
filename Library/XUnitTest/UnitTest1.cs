@@ -29,7 +29,6 @@ namespace XUnitTest
             context.Books.Add(new Book() { BookId = 3, Name = "Smth", ReleaseDate = new DateTime(2005, 05, 02) });
             context.SaveChanges();
         
-
             Assert.Equal(3, context.Books.Count());
 
         }
@@ -43,17 +42,35 @@ namespace XUnitTest
         [Fact]
         public void CheckContains()
         {
-            IUnitOfWork ufo = new UnitOfWork(context);
+            var ufo = new UnitOfWork(context);
             var finder = new Finder<Book, int>(context.Books); 
             var repository = new Repository<Book>(context.Books);
 
-            var service = new MyService(ufo, repository);
-            service.Add("Bookname");
+            var service = new MyBookService(ufo, repository);
+            var book = new Book { BookId = 1, Name = "Cake", ReleaseDate = new DateTime(2009, 01, 03) };
+            service.Create(book);
 
-            var findBookFinder = new MyFinder(finder);
+            var findBookFinder = new MyBookFinder(finder);
             findBookFinder.FindBook(1);
 
             Assert.NotNull(findBookFinder.FindBook(1));
+        }
+
+        [Fact]
+        public void CheckRemove()
+        {
+            var ufo = new UnitOfWork(context);
+            var repository = new Repository<Book>(context.Books);
+            var finder = new Finder<Book, int>(context.Books);
+
+            var service = new MyBookService(ufo, repository);
+            var findBookFinder = new MyBookFinder(finder);
+
+            var book = new Book { BookId = 1, Name = "Cake", ReleaseDate = new DateTime(2009, 01, 03) };
+            service.Create(book);
+            service.Delete(book);
+            
+            Assert.Null(context.Books.Where(p => p.Name == "Cake"));
         }
     }
 }

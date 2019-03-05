@@ -6,11 +6,11 @@ using BLL.Entities;
 
 namespace BLL.Services
 {
-    public class MyFinder
+    public class MyBookFinder
     {
         private readonly IFinder<Book, int> _finder;
 
-        public MyFinder(IFinder<Book, int> finder)
+        public MyBookFinder(IFinder<Book, int> finder)
         {
             _finder = finder;
         }
