@@ -6,3 +6,4 @@ D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.Assemb
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfo.cs
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.pdb
+d:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache

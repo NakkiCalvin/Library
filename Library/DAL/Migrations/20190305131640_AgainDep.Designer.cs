@@ -4,14 +4,16 @@ using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190305131640_AgainDep")]
+    partial class AgainDep
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,20 +23,24 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Entities.Author", b =>
                 {
-                    b.Property<int>("AuthorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AuthorName");
 
-                    b.HasKey("AuthorId");
+                    b.Property<int>("StorageId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StorageId");
 
                     b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("BLL.Entities.Book", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -42,7 +48,11 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.HasKey("BookId");
+                    b.Property<int>("StorageId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StorageId");
 
                     b.ToTable("Books");
                 });
@@ -56,6 +66,22 @@ namespace DAL.Migrations
                     b.HasKey("StorageId");
 
                     b.ToTable("Storage");
+                });
+
+            modelBuilder.Entity("BLL.Entities.Author", b =>
+                {
+                    b.HasOne("BLL.Entities.Storage", "Storage")
+                        .WithMany("Authors")
+                        .HasForeignKey("StorageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BLL.Entities.Book", b =>
+                {
+                    b.HasOne("BLL.Entities.Storage", "Storage")
+                        .WithMany("Books")
+                        .HasForeignKey("StorageId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

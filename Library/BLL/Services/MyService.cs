@@ -15,19 +15,16 @@ namespace BLL.Services
             _repository = repository;
         }
 
-        public void Add(string url)
+        public void Add(string name)
         {
-            var book = new Book() { Name = "cake"};
-            //_repository.Books.Add(blog);
-            //_context.SaveChanges();
+            var book = new Book() { Name = name};
+            _repository.Create(book);
+            _unitOfWork.Commit();
         }
 
-        /*public IEnumerable<Blog> Find(string term)
+        public void Find(int id)
         {
-            return _context.Books
-                .Where(b => b.Name.Contain(term))
-                .OrderBy(b => b.Url)
-                .ToList();
-        }*/
+
+        }
     }
 }

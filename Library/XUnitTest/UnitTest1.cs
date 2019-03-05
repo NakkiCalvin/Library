@@ -1,10 +1,13 @@
 using System;
 using System.Linq;
 using BLL;
+using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Services;
+using DAL;
 using DAL.Context;
 using Microsoft.EntityFrameworkCore;
+using Remotion.Linq.Clauses.ResultOperators;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
 using Xunit;
 
@@ -12,37 +15,47 @@ namespace XUnitTest
 {
     public class UnitTest1
     {
-        [Fact]
-        public void Add_writes_to_database()
-        {
-            //var options = new DbContextOptionsBuilder<ApplicationContext>()
-            //    .UseInMemoryDatabase(databaseName: "esw376")
-            //    .Options;
+        public static DbContextOptions<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>()
+            .UseInMemoryDatabase(databaseName: "BookAppDb")
+            .Options;
 
-            // Run the test against one instance of the context
-            //var context = new ApplicationContext(options);
-            //var service = new MyService(context);
-            //service.Add("http://sample.com");
+        public ApplicationContext context = new ApplicationContext(options);
+
+        [Fact]
+        public void WriteToBase()
+        {
+            context.Books.Add(new Book() { BookId = 1, Name = "Jungle", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.Books.Add(new Book() { BookId = 2, Name = "Cake", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.Books.Add(new Book() { BookId = 3, Name = "Smth", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.SaveChanges();
+        
+
+            Assert.Equal(3, context.Books.Count());
+
         }
 
         [Fact]
         public void CheckDataBase()
         {
-            var options = new DbContextOptionsBuilder<ApplicationContext>()
-                .UseInMemoryDatabase(databaseName: "BookAppDb")
-                .Options;
-
-            var context = new ApplicationContext(options);
-            //    context.Books.Add(new Book() {});
-            //    context.Books.Add(new Book() {});
-            //    context.Books.Add(new Book() {});
-            //    context.SaveChanges();
-
-            //var service = new MyService(context);
-            //var result = service.Find("cat");
-            //Assert.AreEqual(2, result.Count());
-
             Assert.NotNull(context);
         }
+
+        [Fact]
+        public void CheckContains()
+        {
+            IUnitOfWork ufo = new UnitOfWork(context);
+            var finder = new Finder<Book>(context.Books); 
+            var repository = new Repository<Book>(context.Books);
+
+            var service = new MyService(ufo, repository);
+            service.Add("Bookname");
+
+            var findBookFinder = new MyFinder(finder);
+
+
+            Assert.NotNull(context.Books.Where(p => p.Name == "Bookname"));
+        }
+
+
     }
 }

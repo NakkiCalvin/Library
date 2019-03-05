@@ -6,11 +6,9 @@ namespace BLL.Entities
 {
     public class Author
     {
-        public int Id { get; set; }
+        public int AuthorId { get; set; }
         public string AuthorName { get; set; }
 
-        public int? AuthorId { get; set; }
-
-        public Storage Storage { get; set; }
+        //public Book Book { get; set; }
     }
 }

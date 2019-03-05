@@ -6,15 +6,15 @@ namespace BLL.Entities
 {
     public class Storage
     {
-        public int Id { get; set; }
-        
-        public ICollection<Book> Books { get; set; }
-        public ICollection<Author> Authors { get; set; }
+        public int StorageId { get; set; }
 
-        public Storage()
-        {
-            Books = new List<Book>();
-            Authors = new List<Author>();
-        }
+        //public ICollection<Book> Book { get; set; }
+        //public ICollection<Author> Author { get; set; }
+        
+       // public Storage()
+       // {
+       //     Book = new List<Book>();
+       //     Author = new List<Author>();
+       // }
     }
 }
