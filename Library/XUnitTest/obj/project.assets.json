@@ -6729,11 +6729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\XUnitTest.csproj",
+      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\XUnitTest.csproj",
       "projectName": "XUnitTest",
-      "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\XUnitTest.csproj",
+      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\XUnitTest.csproj",
       "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\obj\\",
+      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\XUnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6752,8 +6752,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj"
             }
           }
         }
