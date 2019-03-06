@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NakkiCalvin\\.nuget\\packages\\": {},
+    "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj",
+      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj",
-      "packagesPath": "C:\\Users\\NakkiCalvin\\.nuget\\packages\\",
-      "outputPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\obj\\",
+      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj",
+      "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
+      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\NakkiCalvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladimir.Dyatchik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

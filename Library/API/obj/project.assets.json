@@ -5907,10 +5907,11 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.2.2": {
-      "sha512": "WBQhms1wB9V43TRXB/V8qUw8j8dEI2Ew5LZvqkBYct6khD9QpIuVpzUtUwJATOFC8WKaGgowSA0E0L7pNoLQfw==",
+      "sha512": "/j1tKR7x0wCnm9oSlfgBuh8n1aTZEVf+Aehi0AVMdDeFOnfvY4YrzIz6lsnApY/GfHUA/qyinb0e53ZpIla73Q==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
@@ -5919,10 +5920,11 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.2": {
-      "sha512": "qTR9OSjKEoxxoZ/G/XbSPZsdxueiWUHgWU+XrOfQAm4+dcY0XEenR4BXT5gQeVGzPrLsQb3loQhgjmKKLdI5LA==",
+      "sha512": "qhT7GxIoMldafNNxPXUKNVtxCGk8mH2MXgGO/yJCsN1bsP1jhkDLVmpLAS0Mz0uGIZvGxuIWF5HQ+lCLwHacCg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
@@ -5931,10 +5933,11 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.2": {
-      "sha512": "t+9kW6MwDDrGPPx15c2AIE2f6DM9nbGcHThagg9rcUZz6shmC8LS1Qhd5TSocKHmJafa+hHhBfDNGPyDDeNfHQ==",
+      "sha512": "0EHbLoFkbjhD/9prSNyvETsRleYNa38QeadLNlaKJSAm8l7sQN451rk/WOKL2BOUO5RfA4IcRqCc2g3wWo06GA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "microsoft.entityframeworkcore.analyzers.2.2.2.nupkg.sha512",
@@ -10718,11 +10721,11 @@
       ]
     },
     "System.Security.Cryptography.Algorithms/4.3.0": {
-      "sha512": "dkHXDCum83v0KdXZSb2kJ/B4CYwty4kk/XmyO7IsS5Vu8UI1Qi2LHMVyDLvMbP7olD1f+Hznq/DVTF6Lziql4g==",
+      "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
       "type": "package",
       "path": "system.security.cryptography.algorithms/4.3.0",
       "files": [
-        ".signature.p7s",
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10852,11 +10855,11 @@
       ]
     },
     "System.Security.Cryptography.Encoding/4.3.0": {
-      "sha512": "XCat0j5jVC83UG9fofcuiYDwN0PVKc2OWD0QVLjYpXn7dz+gNaANkHPbhNtr5PR8rDQNHrxtI912Hb29YAB14A==",
+      "sha512": "1DEWjZZly9ae9C79vFwqaO5kaOlI5q+3/55ohmq/7dpDyDfc8lYe7YVxJUZ5MF/NtbkRjwFRo14yM4OEo9EmDw==",
       "type": "package",
       "path": "system.security.cryptography.encoding/4.3.0",
       "files": [
-        ".signature.p7s",
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10940,11 +10943,11 @@
       ]
     },
     "System.Security.Cryptography.Primitives/4.3.0": {
-      "sha512": "WtgnP5mOu5zKL3vQMUPT9tV7XVYGV7Jtb0540DgBD7MMN5ojonwIcw8VybZvS6VloGmE7CRt/Hms8adBsN1DRw==",
+      "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
       "type": "package",
       "path": "system.security.cryptography.primitives/4.3.0",
       "files": [
-        ".signature.p7s",
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12102,23 +12105,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NakkiCalvin\\.nuget\\packages\\": {},
+    "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EffectiveSoft\\Effective\\Library\\Library\\API\\API.csproj",
+      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\NakkiCalvin\\.nuget\\packages\\",
-      "outputPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\API\\obj\\",
+      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
+      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\NakkiCalvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladimir.Dyatchik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12131,11 +12134,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
             },
-            "D:\\EffectiveSoft\\Effective\\Library\\Library\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\DAL\\DAL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj"
             }
           }
         }

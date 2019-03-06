@@ -753,10 +753,11 @@
   },
   "libraries": {
     "Microsoft.EntityFrameworkCore/2.2.2": {
-      "sha512": "WBQhms1wB9V43TRXB/V8qUw8j8dEI2Ew5LZvqkBYct6khD9QpIuVpzUtUwJATOFC8WKaGgowSA0E0L7pNoLQfw==",
+      "sha512": "/j1tKR7x0wCnm9oSlfgBuh8n1aTZEVf+Aehi0AVMdDeFOnfvY4YrzIz6lsnApY/GfHUA/qyinb0e53ZpIla73Q==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
@@ -765,10 +766,11 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.2": {
-      "sha512": "qTR9OSjKEoxxoZ/G/XbSPZsdxueiWUHgWU+XrOfQAm4+dcY0XEenR4BXT5gQeVGzPrLsQb3loQhgjmKKLdI5LA==",
+      "sha512": "qhT7GxIoMldafNNxPXUKNVtxCGk8mH2MXgGO/yJCsN1bsP1jhkDLVmpLAS0Mz0uGIZvGxuIWF5HQ+lCLwHacCg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
@@ -777,10 +779,11 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.2": {
-      "sha512": "t+9kW6MwDDrGPPx15c2AIE2f6DM9nbGcHThagg9rcUZz6shmC8LS1Qhd5TSocKHmJafa+hHhBfDNGPyDDeNfHQ==",
+      "sha512": "0EHbLoFkbjhD/9prSNyvETsRleYNa38QeadLNlaKJSAm8l7sQN451rk/WOKL2BOUO5RfA4IcRqCc2g3wWo06GA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "microsoft.entityframeworkcore.analyzers.2.2.2.nupkg.sha512",
@@ -2979,23 +2982,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NakkiCalvin\\.nuget\\packages\\": {},
+    "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EffectiveSoft\\Effective\\Library\\Library\\DAL\\DAL.csproj",
+      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\NakkiCalvin\\.nuget\\packages\\",
-      "outputPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\DAL\\obj\\",
+      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
+      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\NakkiCalvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladimir.Dyatchik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3008,8 +3011,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\EffectiveSoft\\Effective\\Library\\Library\\BLL\\BLL.csproj"
+            "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
+              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
             }
           }
         }
