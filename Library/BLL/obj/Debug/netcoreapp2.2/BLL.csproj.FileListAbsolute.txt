@@ -1,8 +1,12 @@
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\BLL.deps.json
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\BLL.pdb
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.dll
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.xml
+D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CoreCompileInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfoInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfo.cs
+D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.pdb
