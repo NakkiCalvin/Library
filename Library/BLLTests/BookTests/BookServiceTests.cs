@@ -1,26 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
 using BLL.Services;
-using DAL;
-using DAL.Context;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
-namespace BLLTests
+namespace BLLTests.BookTests
 {
-    public class BLLTest
+    public class BookServiceTests
     {
-        public static DbContextOptions<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>()
-            .UseInMemoryDatabase(databaseName: "BookAppDb")
-            .Options;
-
-        public ApplicationContext context = new ApplicationContext(options);
-
+    
         static readonly Mock<IRepository<Book>> _reposMock = new Mock<IRepository<Book>>();
         static readonly Mock<IUnitOfWork> _unitMock = new Mock<IUnitOfWork>();
         static readonly Mock<IBookFinder> _finderMock = new Mock<IBookFinder>();

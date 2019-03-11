@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.2": {
       "BLLTests/1.0.0": {
         "dependencies": {
+          "API": "1.0.0",
           "BLL": "1.0.0",
           "DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.2",
@@ -1668,6 +1669,16 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
+      "API/1.0.0": {
+        "dependencies": {
+          "BLL": "1.0.0",
+          "DAL": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0.0"
+        },
+        "runtime": {
+          "API.dll": {}
+        }
+      },
       "BLL/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Identity.Stores": "2.2.0"
@@ -1680,8 +1691,7 @@
         "dependencies": {
           "BLL": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "2.2.2",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0.0"
+          "Microsoft.EntityFrameworkCore": "2.2.2"
         },
         "runtime": {
           "DAL.dll": {}
@@ -2633,6 +2643,11 @@
       "sha512": "sha512-3eq5cGXbEJkqW9nwLuXwtxy9B5gMA8i7HW4rN63AhAvy5UvEcQbZnve23wx/oPrkyg/4CbfNhxkBezS0b1oUdQ==",
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
+    },
+    "API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "BLL/1.0.0": {
       "type": "project",

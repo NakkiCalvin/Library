@@ -19,3 +19,11 @@ D:\Repositorys\LibraryApplication\Library\BLLTests\obj\Debug\netcoreapp2.2\BLLTe
 D:\Repositorys\LibraryApplication\Library\BLLTests\obj\Debug\netcoreapp2.2\BLLTests.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\BLLTests\obj\Debug\netcoreapp2.2\BLLTests.dll
 D:\Repositorys\LibraryApplication\Library\BLLTests\obj\Debug\netcoreapp2.2\BLLTests.pdb
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\API.dll
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\API.pdb
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+D:\Repositorys\LibraryApplication\Library\BLLTests\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml

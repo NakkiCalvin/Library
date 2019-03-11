@@ -10,3 +10,11 @@ D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.Assemb
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.pdb
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.Configuration.ConfigurationManager.dll
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.Configuration.ConfigurationManager.xml
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml

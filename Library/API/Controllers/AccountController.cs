@@ -14,35 +14,27 @@ namespace API.Controllers
     {
         private readonly ISignInManager  _signInManager;
         private readonly IUserManager _userManager;
+        private readonly IRoleManager _roleManager;
+        private readonly ITokenService _tokenService;
 
         public AccountController(
             IUserManager userManager,
-            ISignInManager signInManager
+            ISignInManager signInManager,
+            IRoleManager roleManager,
+            ITokenService tokenService
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
+            _tokenService = tokenService;
         }
 
-        //[HttpPost]
-        //public async Task<object> Login([FromBody] LoginDto model)
-        //{
-        //    var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
-
-        //    if (result.Succeeded)
-        //    {
-        //        var appUser = _userManager.Users.SingleOrDefault(r => r.Email == model.Email);
-        //        return await GenerateJwtToken(model.Email, appUser);
-        //    }
-
-        //    throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
-        //}
-
         [HttpGet]
-        [Route("Hello")]
-        public Task<string> Hello()
+        [Route("LogOut")]
+        public async Task Logout()
         {
-            return Task.FromResult("Hello");
+            await _signInManager.Logout();
         }
 
         [HttpPost]
@@ -58,6 +50,7 @@ namespace API.Controllers
             newUser.Id = Guid.NewGuid();
 
             await _userManager.CreateUser(newUser, model.Password);
+            await _userManager.AddToRole(newUser, "User");
             //if (!result.Succeeded)
             //{
             //    return BadRequest(result.Errors);
@@ -66,6 +59,35 @@ namespace API.Controllers
             return Ok(newUser);
 
             //throw new ApplicationException("UNKNOWN_ERROR");
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<object> GenerateToken(LoginModel authorize)
+        {
+            var actualUser = await _userManager.GetUserByEmail(authorize.Email);
+
+            var user = (User) authorize;
+            await _signInManager.CheckPass(user, authorize.Pass, false);
+
+            var configuredToken = new
+            {
+                access_token = _tokenService.GetEncodedJwtToken(),
+                userEmail = user.Email
+            };
+
+            return configuredToken;
+        }
+
+        [HttpPost]
+        [Route("CreateRole")]
+        public async Task<RoleModel> Create(RoleModel roleModel)
+        {
+            roleModel.Id = Guid.NewGuid();
+
+            await _roleManager.AddRole((Role)roleModel);
+
+            return roleModel;
         }
     }
 }

@@ -19,3 +19,9 @@ D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALT
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.dll
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.pdb
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml

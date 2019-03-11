@@ -1,15 +1,13 @@
 using System;
 using System.Linq;
 using BLL.Entities;
-using BLL.Services;
-using DAL;
 using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace DALTest
+namespace DALTest.BookTests
 {
-    public class DALTests
+    public class DALBookTest
     {
         public static DbContextOptions<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>()
             .UseInMemoryDatabase(databaseName: "BookAppDb")

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Identity;
@@ -15,5 +16,25 @@ namespace BLL.Services
         {
             _manager = manager;
         }
+
+        public async Task<SignInResult> CheckPass(User user, string pass, bool lockoutFail)
+        {
+            return await _manager.CheckPasswordSignInAsync(user, pass, lockoutFail);
+        }
+
+        public async Task Logout()
+        {
+            await _manager.SignOutAsync();
+        }
+
+        public Task<SignInResult> SignIn(User user, string pass)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public async Task<SignInResult> LogIn(User user, bool isPers)
+        // {
+        //await _manager.SignInAsync(user, isPers);
+        // }
     }
 }

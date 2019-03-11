@@ -25,6 +25,8 @@ namespace API
 {
     public class Startup
     {
+        private IRoleManager _roleManager;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,35 +48,39 @@ namespace API
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IRoleManager, RoleService>();
             services.AddTransient<IUserManager, UserService>();
             services.AddTransient<ISignInManager, SignInService>();
 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-                })
-                .AddJwtBearer(cfg =>
-                {
-                    cfg.RequireHttpsMetadata = false;
-                    cfg.SaveToken = true;
-                    cfg.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidIssuer = Configuration["JwtIssuer"],
-                        ValidAudience = Configuration["JwtIssuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
-                        ClockSkew = TimeSpan.Zero // remove delay of token when expire
-                    };
-                });
             services.AddCors();
+
+            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            //services
+            //    .AddAuthentication(options =>
+            //    {
+            //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            //    })
+            //    .AddJwtBearer(cfg =>
+            //    {
+            //        cfg.RequireHttpsMetadata = false;
+            //        cfg.SaveToken = true;
+            //        cfg.TokenValidationParameters = new TokenValidationParameters
+            //        {
+            //            ValidIssuer = Configuration["JwtIssuer"],
+            //            ValidAudience = Configuration["JwtIssuer"],
+            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+            //            ClockSkew = TimeSpan.Zero // remove delay of token when expire
+            //        };
+            //    });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             app.Use(async (ctx, next) =>
             {
@@ -101,6 +107,30 @@ namespace API
                 route.MapRoute("default", "controller/action/{id}");
             });
             app.UseAuthentication();
+            RoleCreation(serviceProvider).Wait();
+        }
+
+        private async Task RoleCreation(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<Role>>();
+            List<string> roles = new List<string>();
+            roles.Add("Admin");
+            roles.Add("User");
+
+            foreach (var role in roles)
+            {
+                var exist = await roleManager.RoleExistsAsync(role);
+
+                if (exist)
+                {
+                    continue;
+                }
+                else
+                {
+                    var roleToAdd = new Role {Name = role};
+                    await roleManager.CreateAsync(roleToAdd);
+                }
+            }
         }
     }
 }
