@@ -25,8 +25,6 @@ namespace API
 {
     public class Startup
     {
-        private IRoleManager _roleManager;
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -53,8 +51,17 @@ namespace API
             services.AddTransient<IUserManager, UserService>();
             services.AddTransient<ISignInManager, SignInService>();
 
-            services.AddCors();
-
+         
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Policy",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+            });
             //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             //services
             //    .AddAuthentication(options =>

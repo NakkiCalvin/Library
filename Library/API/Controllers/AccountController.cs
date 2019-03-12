@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using API.Requests;
 using BLL.Entities;
 using BLL.Managers;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("Account")]
+    [EnableCors("Policy")]
     [ApiController]
     public class AccountController : ControllerBase
     {
