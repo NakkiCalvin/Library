@@ -58,8 +58,8 @@ namespace API
                     builder =>
                     {
                         builder.AllowAnyOrigin()
-                            .AllowAnyMethod()
-                            .AllowAnyHeader();
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
                     });
             });
             //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();

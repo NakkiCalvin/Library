@@ -68,7 +68,11 @@ namespace API.Controllers
         public async Task<object> GenerateToken(LoginModel authorize)
         {
             var actualUser = await _userManager.GetUserByEmail(authorize.Email);
+            if (actualUser == null)
+            {
+                return BadRequest("This user does not exists");
 
+            }
             var user = (User) authorize;
             await _signInManager.CheckPass(user, authorize.Pass, false);
 
