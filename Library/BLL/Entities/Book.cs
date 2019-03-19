@@ -9,7 +9,7 @@ namespace BLL.Entities
         public int BookId { get; set; }
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-
-        //public ICollection<Author> Author { get; set; }
+        public string AuthorId { get; set; }
+        public string Content { get; set; }
     }
 }

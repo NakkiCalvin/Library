@@ -4,10 +4,14 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL.DataAccess;
 using BLL.Entities;
+using BLL.Finders;
 using BLL.Managers;
 using BLL.Services;
+using DAL;
 using DAL.Context;
+using DAL.Finder;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,6 +54,10 @@ namespace API
             services.AddTransient<IRoleManager, RoleService>();
             services.AddTransient<IUserManager, UserService>();
             services.AddTransient<ISignInManager, SignInService>();
+            services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IBookFinder, BookFinder>();
+            services.AddScoped<IRepository<Book>, Repository<Book>>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
          
             services.AddCors(options =>

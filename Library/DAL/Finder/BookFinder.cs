@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Finder
 {
-    class BookFinder : Finder<Book>, IBookFinder
+    public class BookFinder : Finder<Book>, IBookFinder
     {
         public BookFinder(DbSet<Book> entity) : base(entity)
         {

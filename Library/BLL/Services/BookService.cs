@@ -2,10 +2,11 @@
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
+using BLL.Managers;
 
 namespace BLL.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
         readonly IUnitOfWork _unitOfWork;
         readonly IRepository<Book> _repository;
@@ -48,26 +49,5 @@ namespace BLL.Services
             _repository.Delete(book);
             _unitOfWork.Commit();
         }
-
-        public void Create(IEnumerable<Book> books)
-        {
-            if (books == null) return;
-            _repository.Create(books);
-            _unitOfWork.Commit();
-        }
-
-        public void Update(IEnumerable<Book> books)
-        {
-            if (books == null) return;
-            _repository.Update(books);
-            _unitOfWork.Commit();
-        }
-
-        public void Delete(IEnumerable<Book> books)
-        {
-            _repository.Delete(books);
-            _unitOfWork.Commit();
-        }
-
     }
 }
