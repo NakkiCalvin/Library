@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BLL.Entities;
 using BLL.Managers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -53,15 +56,21 @@ namespace API.Controllers
 
         [Route("Create")]
         [HttpPost]
-        public async void AddBook(Book book)
+        public async Task<IActionResult> AddBook(Book book)
         {
             if (book != null)
             {
-                var user = await _userManager.GetUserByEmail(this.User.Identity.Name);
-                book.AuthorId = user.Id.ToString();
+                var identity = (ClaimsIdentity) this.User.Identity;
+
+                var currentUserName = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
+                var user = await _userManager.GetUserByEmail(currentUserName);
+                book.AuthorId = 2;
                 book.ReleaseDate = DateTime.Now;
+                _bookService.Create(book);
+                return Ok(book);
             }
-            _bookService.Create(book);
+
+            return BadRequest("hui");
         }
 
         [Route("Delete")]

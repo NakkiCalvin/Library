@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Managers;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 namespace BLL.Services
@@ -37,5 +40,7 @@ namespace BLL.Services
         {
             return _manager.GetRolesAsync(user);
         }
+
+       
     }
 }

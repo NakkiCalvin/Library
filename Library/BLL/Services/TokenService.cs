@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using BLL.Managers;
+using BLL.TokenConfiguration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -11,34 +13,25 @@ namespace BLL.Services
 {
     public class TokenService : ITokenService
     {
-        private readonly JwtSecurityToken _jwt;
 
         public TokenService(IConfiguration configuration)
         {
-            var configuration1 = configuration;
-
-            var issuer = configuration1["JwtTokenConfiguration:Issuer"];
-            var audience = configuration1["JwtTokenConfiguration:Audience"];
-            var secretKey = configuration1["JwtTokenConfiguration:SecretKey"];
-            var lifetime = configuration1["JwtTokenConfiguration:Lifetime"];
-
-            var currentTime = DateTime.UtcNow;
-            _jwt = new JwtSecurityToken(
-                issuer: issuer,
-                audience: audience,
-                notBefore: currentTime,
-                expires: currentTime.Add(TimeSpan.FromMinutes(int.Parse(lifetime))),
-                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(
-                        Encoding.ASCII.GetBytes(secretKey)),
-                    SecurityAlgorithms.HmacSha256)
-            );
+           
         }
 
-        public string GetEncodedJwtToken()
+        public string GetEncodedJwtToken(string userEmail)
         {
-            var encodedToken = new JwtSecurityTokenHandler().WriteToken(_jwt);
+            var claims = new List<Claim> { new Claim(JwtRegisteredClaimNames.Sub, userEmail) };
 
-            return encodedToken;
+
+            var jwtToken = new JwtSecurityToken(
+                TokenConfig.ISSUER,
+                TokenConfig.AUDIENCE,
+                claims,
+                expires: DateTime.Now.Add(TimeSpan.FromMinutes(TokenConfig.LIFETIME)),
+                signingCredentials: new SigningCredentials(TokenConfig.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256)
+            );
+            return new JwtSecurityTokenHandler().WriteToken(jwtToken);
         }
     }
 }

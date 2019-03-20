@@ -76,7 +76,7 @@ namespace APITests.UserTests
             var logmodel = new LoginModel {Email = "vova@gmail.com", Pass = "fafafa1sfAAa_" };
             var res = await _controller.GenerateToken(logmodel);
 
-            _mockedTokenManager.Verify(x => x.GetEncodedJwtToken(), Times.Once);
+            _mockedTokenManager.Verify(x => x.GetEncodedJwtToken(logmodel.Email), Times.Once);
             //_mockedManager.Setup(x => x.GetUserByEmail(user.Email)).Returns(Task.FromResult(new User()));
 
             //_mockedManager.Verify(x => x.GetUserByEmail(It.IsAny<string>()), Times.Once);

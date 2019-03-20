@@ -16,7 +16,7 @@ namespace BLLTests.BookTests
         static readonly Mock<IBookFinder> _finderMock = new Mock<IBookFinder>();
         readonly BookService _bookService = new BookService(_unitMock.Object, _reposMock.Object, _finderMock.Object);
 
-        static Book book = new Book { BookId = 3, Name = "Cake3", ReleaseDate = new DateTime(2009, 01, 03) };
+        static Book book = new Book { BookId = 3, Title = "Cake3", ReleaseDate = new DateTime(2009, 01, 03) };
 
         [Fact]
         public void MoqCheckCreate()

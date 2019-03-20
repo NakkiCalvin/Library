@@ -3,7 +3,6 @@ D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\BLL.pdb
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.dll
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.xml
-D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CoreCompileInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfoInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfo.cs
@@ -18,3 +17,6 @@ D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.Configuration.ConfigurationManager.xml
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Abstractions.xml

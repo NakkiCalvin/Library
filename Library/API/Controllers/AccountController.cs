@@ -78,7 +78,7 @@ namespace API.Controllers
 
             var configuredToken = new
             {
-                access_token = _tokenService.GetEncodedJwtToken(),
+                access_token = _tokenService.GetEncodedJwtToken(authorize.Email),
                 userEmail = user.Email
             };
 

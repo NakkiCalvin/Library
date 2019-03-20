@@ -19,9 +19,9 @@ namespace DALTest.BookTests
         [Fact]
         public void CheckWriteToBase()
         {
-            context.Books.Add(new Book() { BookId = 1, Name = "Jungle", ReleaseDate = new DateTime(2005, 05, 02) });
-            context.Books.Add(new Book() { BookId = 2, Name = "Cake", ReleaseDate = new DateTime(2005, 05, 02) });
-            context.Books.Add(new Book() { BookId = 3, Name = "Smth", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.Books.Add(new Book() { BookId = 1, Title = "Jungle", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.Books.Add(new Book() { BookId = 2, Title = "Cake", ReleaseDate = new DateTime(2005, 05, 02) });
+            context.Books.Add(new Book() { BookId = 3, Title = "Smth", ReleaseDate = new DateTime(2005, 05, 02) });
             context.SaveChanges();
         
             Assert.Equal(3, context.Books.Count());
@@ -36,7 +36,7 @@ namespace DALTest.BookTests
         [Fact]
         public void CheckRemove()
         {
-            var book = new Book { BookId = 6, Name = "Cake2", ReleaseDate = new DateTime(2009, 01, 03) };
+            var book = new Book { BookId = 6, Title = "Cake2", ReleaseDate = new DateTime(2009, 01, 03) };
             context.Books.Add(book);
             context.SaveChanges();
             context.Books.Remove(book);
@@ -44,20 +44,20 @@ namespace DALTest.BookTests
 
             //Assert.IsAssignableFrom<IQueryable<Book>>(context.Books);
 
-            Assert.Null(context.Books.Where(p => p.Name == "Cake2"));
+            Assert.Null(context.Books.Where(p => p.Title == "Cake2"));
         }
 
         [Fact]
         public void CheckUpdate()
         {
-            var book = new Book { BookId = 6, Name = "Cake2", ReleaseDate = new DateTime(2009, 01, 03) };
+            var book = new Book { BookId = 6, Title = "Cake2", ReleaseDate = new DateTime(2009, 01, 03) };
             context.Books.Add(book);
             context.SaveChanges();
-            book.Name = "Cake2";
+            book.Title = "Cake2";
             context.Books.Update(book);
             context.SaveChanges();
 
-            Assert.Equal("Cake2", book.Name);
+            Assert.Equal("Cake2", book.Title);
         }
     }
 }

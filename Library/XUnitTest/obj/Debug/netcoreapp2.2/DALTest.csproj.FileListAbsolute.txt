@@ -8,10 +8,8 @@ D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\DALT
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\DALTest.pdb
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\DAL.dll
-D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\DAL.pdb
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\BLL.pdb
-D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.xml
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.csprojAssemblyReference.cache
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.csproj.CoreCompileInputs.cache
 D:\Repositorys\LibraryApplication\Library\XUnitTest\obj\Debug\netcoreapp2.2\DALTest.AssemblyInfoInputs.cache
@@ -25,3 +23,5 @@ D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Syst
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
 D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Repositorys\LibraryApplication\Library\XUnitTest\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.xml

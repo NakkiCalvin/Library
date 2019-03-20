@@ -19,28 +19,19 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BLL.Entities.Author", b =>
-                {
-                    b.Property<int>("AuthorId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AuthorName");
-
-                    b.HasKey("AuthorId");
-
-                    b.ToTable("Authors");
-                });
-
             modelBuilder.Entity("BLL.Entities.Book", b =>
                 {
                     b.Property<int>("BookId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<int>("AuthorId");
+
+                    b.Property<string>("Content");
 
                     b.Property<DateTime>("ReleaseDate");
+
+                    b.Property<string>("Title");
 
                     b.HasKey("BookId");
 
@@ -88,17 +79,6 @@ namespace DAL.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("BLL.Entities.Storage", b =>
-                {
-                    b.Property<int>("StorageId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("StorageId");
-
-                    b.ToTable("Storage");
                 });
 
             modelBuilder.Entity("BLL.Entities.User", b =>

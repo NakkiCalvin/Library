@@ -13,5 +13,6 @@ namespace BLL.Managers
         Task<IdentityResult> AddToRole(User user, string role);
         Task<User> GetUserByEmail(string email);
         Task<IList<string>> GetUserRoles(User user);
+
     }
 }

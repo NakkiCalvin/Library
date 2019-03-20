@@ -2,6 +2,6 @@
 {
     public interface ITokenService
     {
-        string GetEncodedJwtToken();
+        string GetEncodedJwtToken(string userEmail);
     }
 }

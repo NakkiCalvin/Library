@@ -9,6 +9,7 @@ using BLL.Entities;
 using BLL.Finders;
 using BLL.Managers;
 using BLL.Services;
+using BLL.TokenConfiguration;
 using DAL;
 using DAL.Context;
 using DAL.Finder;
@@ -50,16 +51,17 @@ namespace API
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddTransient<ITokenService, TokenService>();
-            services.AddTransient<IRoleManager, RoleService>();
-            services.AddTransient<IUserManager, UserService>();
-            services.AddTransient<ISignInManager, SignInService>();
-            services.AddTransient<IBookService, BookService>();
-            services.AddTransient<IBookFinder, BookFinder>();
+            services.AddScoped(x => x.GetRequiredService<ApplicationContext>().Books);
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IRoleManager, RoleService>();
+            services.AddScoped<IUserManager, UserService>();
+            services.AddScoped<ISignInManager, SignInService>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBookFinder, BookFinder>();
             services.AddScoped<IRepository<Book>, Repository<Book>>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<TokenConfig>();
 
-         
             services.AddCors(options =>
             {
                 options.AddPolicy("Policy",
@@ -70,28 +72,35 @@ namespace API
                             .AllowAnyMethod();
                     });
             });
-            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            //services
-            //    .AddAuthentication(options =>
-            //    {
-            //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-            //    })
-            //    .AddJwtBearer(cfg =>
-            //    {
-            //        cfg.RequireHttpsMetadata = false;
-            //        cfg.SaveToken = true;
-            //        cfg.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidIssuer = Configuration["JwtIssuer"],
-            //            ValidAudience = Configuration["JwtIssuer"],
-            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
-            //            ClockSkew = TimeSpan.Zero // remove delay of token when expire
-            //        };
-            //    });
-            
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+                })
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.RequireHttpsMetadata = false;
+                    cfg.SaveToken = true;
+                    cfg.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = TokenConfig.ISSUER,
+
+                        ValidateAudience = true,
+                        ValidAudience = TokenConfig.AUDIENCE,
+
+                        ValidateLifetime = true,
+
+                        IssuerSigningKey = TokenConfig.GetSymmetricSecurityKey(),
+                        ValidateIssuerSigningKey = true,
+                    };
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -115,13 +124,16 @@ namespace API
                 app.UseHsts();
             }
 
-            app.UseCors();
+            app.UseAuthentication();
             app.UseHttpsRedirection();
+            app.UseCors("Policy");
+            
+
+            
             app.UseMvc(route =>
             {
                 route.MapRoute("default", "controller/action/{id}");
             });
-            app.UseAuthentication();
             RoleCreation(serviceProvider).Wait();
         }
 
