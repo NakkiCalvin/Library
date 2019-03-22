@@ -19,9 +19,9 @@ namespace DAL.Finder
             return AsQueryable().FirstOrDefault(x => x.BookId == id);
         }
 
-        public IEnumerable<Book> GetAll()
+        public IEnumerable<Book> GetAll(Guid id)
         {
-            return AsQueryable().ToList();
+            return AsQueryable().Where(x => x.AuthorId == id.ToString()).ToList();
         }
 
         public bool IsBookExists(Book book)

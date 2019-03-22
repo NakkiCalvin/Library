@@ -25,7 +25,7 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId");
+                    b.Property<string>("AuthorId");
 
                     b.Property<string>("Content");
 

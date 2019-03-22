@@ -1695,8 +1695,8 @@
       "BLL/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Identity.Stores": "2.2.0",
-          "System.IdentityModel.Tokens.Jwt": "5.3.0.0",
-          "Microsoft.IdentityModel.Tokens": "5.3.0.0"
+          "Microsoft.IdentityModel.Tokens": "5.3.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.3.0.0"
         },
         "runtime": {
           "BLL.dll": {}
@@ -1721,17 +1721,17 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt.Reference/5.3.0.0": {
+      "Microsoft.IdentityModel.Tokens.Reference/5.3.0.0": {
         "runtime": {
-          "System.IdentityModel.Tokens.Jwt.dll": {
+          "Microsoft.IdentityModel.Tokens.dll": {
             "assemblyVersion": "5.3.0.0",
             "fileVersion": "5.3.0.51005"
           }
         }
       },
-      "Microsoft.IdentityModel.Tokens.Reference/5.3.0.0": {
+      "System.IdentityModel.Tokens.Jwt.Reference/5.3.0.0": {
         "runtime": {
-          "Microsoft.IdentityModel.Tokens.dll": {
+          "System.IdentityModel.Tokens.Jwt.dll": {
             "assemblyVersion": "5.3.0.0",
             "fileVersion": "5.3.0.51005"
           }
@@ -2698,12 +2698,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.IdentityModel.Tokens.Jwt.Reference/5.3.0.0": {
+    "Microsoft.IdentityModel.Tokens.Reference/5.3.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.IdentityModel.Tokens.Reference/5.3.0.0": {
+    "System.IdentityModel.Tokens.Jwt.Reference/5.3.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

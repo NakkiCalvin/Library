@@ -29,42 +29,50 @@ namespace API.Controllers
 
         [Route("GetAll")]
         [HttpGet]
-        public IEnumerable<Book> GetBooks()
+        public async Task<Book[]> GetBooks()
         {
-            return _bookService.GetAll();
+            var identity = (ClaimsIdentity) this.User.Identity;
+            var userEmail = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
+            var user = await _userManager.GetUserByEmail(userEmail);
+            IEnumerable<Book> userBookList = _bookService.GetAll(user.Id);
+            Book[] books = userBookList.ToArray();
+            return books;
         }
 
         [Route("Get")]
-        [HttpGet]
+        [HttpGet("{id}")]
         public Book GetBook(int id)
         {
             return _bookService.GetBook(id);
         }
 
-        [Route("Edit")]
-        [HttpPost("{id}")]
-        public void UpdateBook(int id, Book book)
+        [Route("Update")]
+        [HttpPost]
+        public ActionResult<Book> UpdateBook(Book book)
         {
-            if (book.BookId != id)
+            if (book != null)
             {
-                Book actualBook = _bookService.GetBook(id);
+                Book actualBook = _bookService.GetBook(book.BookId);
+                actualBook.Title = book.Title;
+                actualBook.Content = book.Content;
                 _bookService.Update(actualBook);
+                return actualBook;
             }
 
-            _bookService.Update(book);
+            return null;
         }
 
         [Route("Create")]
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
         {
-            if (book != null)
+            if (book.Content != null)
             {
                 var identity = (ClaimsIdentity) this.User.Identity;
 
                 var currentUserName = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
                 var user = await _userManager.GetUserByEmail(currentUserName);
-                book.AuthorId = 2;
+                book.AuthorId = user.Id.ToString();
                 book.ReleaseDate = DateTime.Now;
                 _bookService.Create(book);
                 return Ok(book);
@@ -73,12 +81,14 @@ namespace API.Controllers
             return BadRequest("hui");
         }
 
-        [Route("Delete")]
-        [HttpPost("{id}")]
-        public void DeleteBook(int id)
+        [Route("Delete/{id}")]
+        [HttpPost]
+        public int DeleteBook(int id)
         {
             var book = _bookService.GetBook(id);
             _bookService.Delete(book);
+
+            return id;
         }
 
     }

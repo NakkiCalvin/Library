@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
@@ -24,9 +25,9 @@ namespace BLL.Services
             return _finder.GetById(id);
         }
 
-        public IEnumerable<Book> GetAll()
+        public IEnumerable<Book> GetAll(Guid id)
         {
-            return _finder.GetAll();
+            return _finder.GetAll(id);
         }
 
         public void Create(Book book)
