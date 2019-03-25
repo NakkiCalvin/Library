@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using API.Mapping;
+using API.Requests;
+using API.Validators;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
@@ -14,6 +16,7 @@ using BLL.TokenConfiguration;
 using DAL;
 using DAL.Context;
 using DAL.Finder;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,7 +45,13 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddFluentValidation(fv =>
+                {
+                    fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>();
+                    fv.RegisterValidatorsFromAssemblyContaining<BookValidator>();
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ApplicationContext>(options =>
                 {
