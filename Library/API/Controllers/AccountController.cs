@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using API.Mapping;
 using API.Requests;
+using AutoMapper;
 using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Cors;
@@ -48,17 +50,24 @@ namespace API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var newUser = (User) model;
-            newUser.Id = Guid.NewGuid();
+            var mapUser = Mapper.Map<RegisterUserModel, User>(model);
+            mapUser.Id = Guid.NewGuid();
+            await _userManager.CreateUser(mapUser, model.Password);
+            await _userManager.AddToRole(mapUser, "User");
 
-            await _userManager.CreateUser(newUser, model.Password);
-            await _userManager.AddToRole(newUser, "User");
+            return Ok(mapUser);
+
+            // var newUser = (User) model;
+            // newUser.Id = Guid.NewGuid();
+
+            // await _userManager.CreateUser(newUser, model.Password);
+            // await _userManager.AddToRole(newUser, "User");
             //if (!result.Succeeded)
             //{
             //    return BadRequest(result.Errors);
             //}
 
-            return Ok(newUser);
+            //return Ok(newUser);
 
             //throw new ApplicationException("UNKNOWN_ERROR");
         }
@@ -67,6 +76,8 @@ namespace API.Controllers
         [Route("Login")]
         public async Task<object> GenerateToken(LoginModel authorize)
         {
+            var mapUser = Mapper.Map<LoginModel, User>(authorize);
+
             var actualUser = await _userManager.GetUserByEmail(authorize.Email);
             if (actualUser == null)
             {

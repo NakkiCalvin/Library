@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using API.Mapping;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
@@ -33,6 +34,7 @@ namespace API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AutomapperConfig.Configure();
         }
 
         public IConfiguration Configuration { get; }
