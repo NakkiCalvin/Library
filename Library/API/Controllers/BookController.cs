@@ -4,6 +4,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using API.Requests;
+using AutoMapper;
 using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Authorization;
@@ -48,13 +50,14 @@ namespace API.Controllers
 
         [Route("Update")]
         [HttpPost]
-        public ActionResult<Book> UpdateBook(Book book)
+        public ActionResult<Book> UpdateBook(RequestBookModel book)
         {
             if (book != null)
             {
                 Book actualBook = _bookService.GetBook(book.BookId);
-                actualBook.Title = book.Title;
-                actualBook.Content = book.Content;
+                Mapper.Map(book, actualBook);
+                //actualBook.Title = book.Title;
+                //actualBook.Content = book.Content;
                 _bookService.Update(actualBook);
                 return actualBook;
             }
@@ -64,7 +67,7 @@ namespace API.Controllers
 
         [Route("Create")]
         [HttpPost]
-        public async Task<IActionResult> AddBook(Book book)
+        public async Task<IActionResult> AddBook(RequestBookModel book)
         {
             if (book.Content != null)
             {
@@ -72,13 +75,15 @@ namespace API.Controllers
 
                 var currentUserName = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
                 var user = await _userManager.GetUserByEmail(currentUserName);
-                book.AuthorId = user.Id.ToString();
-                book.ReleaseDate = DateTime.Now;
-                _bookService.Create(book);
-                return Ok(book);
+
+                Book newBook = Mapper.Map<RequestBookModel, Book>(book);
+                newBook.AuthorId = user.Id.ToString();
+                newBook.ReleaseDate = DateTime.Now;
+                _bookService.Create(newBook);
+                return Ok(newBook);
             }
 
-            return BadRequest("hui");
+            return BadRequest("Error");
         }
 
         [Route("Delete/{id}")]

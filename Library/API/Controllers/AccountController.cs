@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using API.Mapping;
 using API.Requests;
+using API.Responses;
 using AutoMapper;
 using BLL.Entities;
 using BLL.Managers;
@@ -54,7 +55,6 @@ namespace API.Controllers
             mapUser.Id = Guid.NewGuid();
             await _userManager.CreateUser(mapUser, model.Password);
             await _userManager.AddToRole(mapUser, "User");
-
             return Ok(mapUser);
 
             // var newUser = (User) model;
@@ -74,9 +74,9 @@ namespace API.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<object> GenerateToken(LoginModel authorize)
+        public async Task<object> GenerateToken(RegisterUserModel authorize)
         {
-            var mapUser = Mapper.Map<LoginModel, User>(authorize);
+          
 
             var actualUser = await _userManager.GetUserByEmail(authorize.Email);
             if (actualUser == null)
@@ -84,13 +84,17 @@ namespace API.Controllers
                 return BadRequest("This user does not exists");
 
             }
-            var user = (User) authorize;
-            await _signInManager.CheckPass(user, authorize.Pass, false);
+
+            Mapper.Map(authorize, actualUser);
+
+            //var user = (User) authorize;
+            await _signInManager.CheckPass(actualUser, authorize.Password, false);
 
             var configuredToken = new
             {
                 access_token = _tokenService.GetEncodedJwtToken(authorize.Email),
-                userEmail = user.Email
+                userEmail = actualUser.Email,
+                id = actualUser.Id
             };
 
             return configuredToken;

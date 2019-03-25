@@ -20,17 +20,6 @@ namespace API.Mapping
                 .ForMember(x => x.UserName, opt => opt.MapFrom(src => src.Email))
                 .ForMember(x => x.Email, opt => opt.MapFrom(src => src.Email))
                 .ForAllOtherMembers(x => x.Ignore());
-            cfg.CreateMap<User, ResponseUserModel>()
-                .ForMember(x => x.Email, opt => opt.MapFrom(src => src.UserName))
-                .ForMember(x => x.Email, opt => opt.MapFrom(src => src.Email))
-                .ForAllOtherMembers(x => x.Ignore());
-            cfg.CreateMap<LoginModel, User>()
-                .ForMember(x => x.Email, opt => opt.MapFrom(src => src.Email))
-                .ForAllOtherMembers(x => x.Ignore());
-            cfg.CreateMap<User, ResponseLoginModel>()
-                .ForMember(x => x.userEmail, opt => opt.MapFrom(src => src.Email))
-                //.ForMember(x => x.access_token, opt => opt.MapFrom(src => src.))
-                .ForAllOtherMembers(x => x.Ignore());
             cfg.CreateMap<RequestBookModel, Book>();
             cfg.CreateMap<Book, ResponseBookModel>();
             Mapper.Initialize(cfg);
