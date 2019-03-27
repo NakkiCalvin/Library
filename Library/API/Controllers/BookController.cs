@@ -56,8 +56,6 @@ namespace API.Controllers
             {
                 Book actualBook = _bookService.GetBook(book.BookId);
                 Mapper.Map(book, actualBook);
-                //actualBook.Title = book.Title;
-                //actualBook.Content = book.Content;
                 _bookService.Update(actualBook);
                 return actualBook;
             }
