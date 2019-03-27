@@ -12,7 +12,7 @@ namespace API.Validators
     {
         public BookValidator(IBookService bookService)
         {
-            RuleFor(x => x.Title).NotEmpty().NotNull().MaximumLength(1).MinimumLength(50);
+            RuleFor(x => x.Title).NotEmpty().NotNull().MinimumLength(1).MaximumLength(50);
             RuleFor(x => x.Content).NotEmpty().NotNull().MinimumLength(5).MaximumLength(500);
         }
     }

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using API.Mapping;
 using API.Requests;
 using API.Validators;
+using Autofac;
+using BLL;
 using BLL.DataAccess;
 using BLL.Entities;
 using BLL.Finders;
@@ -58,20 +60,26 @@ namespace API
                     options.UseSqlServer(Configuration["ConnectionStrings:BookApp"]);
                 });
 
-            services.AddIdentity<User, Role>()
+            services.AddIdentity<User, Role>(options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequiredLength = 6;
+                })
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
 
             services.AddScoped(x => x.GetRequiredService<ApplicationContext>().Books);
-            services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<IRoleManager, RoleService>();
-            services.AddScoped<IUserManager, UserService>();
-            services.AddScoped<ISignInManager, SignInService>();
-            services.AddScoped<IBookService, BookService>();
-            services.AddScoped<IBookFinder, BookFinder>();
-            services.AddScoped<IRepository<Book>, Repository<Book>>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<TokenConfig>();
+            //services.AddScoped<ITokenService, TokenService>();
+            //services.AddScoped<IRoleManager, RoleService>();
+            //services.AddScoped<IUserManager, UserService>();
+            //services.AddScoped<ISignInManager, SignInService>();
+            //services.AddScoped<IBookService, BookService>();
+            //services.AddScoped<IBookFinder, BookFinder>();
+            //services.AddScoped<IRepository<Book>, Repository<Book>>();
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped<TokenConfig>();
 
             services.AddCors(options =>
             {
@@ -112,6 +120,12 @@ namespace API
                     };
                 });
 
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule<BLLModules>();
+            builder.RegisterModule<DALModules>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

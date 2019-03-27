@@ -90,25 +90,5 @@ namespace APITests.UserTests
             _mockedSignInManager.Verify(x => x.Logout(), Times.Once);
         }
 
-        [Fact]
-        public async Task CheckRemoveRole()
-        {
-            //arrange
-            Role role = new Role();
-            role.Name = "User";
-
-            _mockedRoleManager.Setup(p => p.RemoveRole(role)).Returns(Task.FromResult(new IdentityResult()));
-
-
-            //act
-
-            //await service.AddRole(role);
-            //var result = await service.RemoveRole(role);
-
-            //assert
-
-            //Assert.Null(result);
-        }
-
     }
 }

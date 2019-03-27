@@ -53,42 +53,24 @@ namespace API.Controllers
 
             var mapUser = Mapper.Map<RegisterUserModel, User>(model);
             mapUser.Id = Guid.NewGuid();
-            await _userManager.CreateUser(mapUser, model.Password);
-            await _userManager.AddToRole(mapUser, "User");
+            var ir = await _userManager.CreateUser(mapUser, model.Password);
+            var rere = await _userManager.AddToRole(mapUser, "User");
             return Ok(mapUser);
-
-            // var newUser = (User) model;
-            // newUser.Id = Guid.NewGuid();
-
-            // await _userManager.CreateUser(newUser, model.Password);
-            // await _userManager.AddToRole(newUser, "User");
-            //if (!result.Succeeded)
-            //{
-            //    return BadRequest(result.Errors);
-            //}
-
-            //return Ok(newUser);
-
-            //throw new ApplicationException("UNKNOWN_ERROR");
         }
 
         [HttpPost]
         [Route("Login")]
         public async Task<object> GenerateToken(RegisterUserModel authorize)
         {
-          
 
-            var actualUser = await _userManager.GetUserByEmail(authorize.Email);
+            User actualUser = await _userManager.GetUserByEmail(authorize.Email);
             if (actualUser == null)
             {
                 return BadRequest("This user does not exists");
-
             }
 
-            Mapper.Map(authorize, actualUser);
+            var result = await _signInManager.CheckPass(actualUser, authorize.Password, false);
 
-            //var user = (User) authorize;
-            await _signInManager.CheckPass(actualUser, authorize.Password, false);
 
             var configuredToken = new
             {

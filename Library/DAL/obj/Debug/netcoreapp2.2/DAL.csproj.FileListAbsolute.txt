@@ -3,8 +3,14 @@ D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\DAL.dll
 D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\DAL.pdb
 D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
 D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\BLL.pdb
 D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csprojAssemblyReference.cache
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csproj.CoreCompileInputs.cache
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.AssemblyInfoInputs.cache
@@ -12,9 +18,3 @@ D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.Assemb
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.dll
 D:\Repositorys\LibraryApplication\Library\DAL\obj\Debug\netcoreapp2.2\DAL.pdb
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
-D:\Repositorys\LibraryApplication\Library\DAL\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml

@@ -33,7 +33,7 @@ namespace BLL.Services
 
         public Task<User> GetUserByEmail(string email)
         {
-            return _manager.FindByEmailAsync(email);
+            return _manager.FindByNameAsync(email);
         }
 
         public Task<IList<string>> GetUserRoles(User user)

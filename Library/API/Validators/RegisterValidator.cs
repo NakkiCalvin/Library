@@ -10,16 +10,11 @@ namespace API.Validators
 {
     public class RegisterValidator : AbstractValidator<RegisterUserModel>
     {
-        public RegisterValidator(IUserManager userManager)
+        public RegisterValidator(IUserManager userManager, ISignInManager signInManager)
         {
-            RuleFor(x => x.Email).EmailAddress().NotEmpty().MustAsync(async (model, email, context) =>
-                {
-                    var userResult = await userManager.GetUserByEmail(email);
-                    return userResult == null;
-                })
-                .WithMessage($"Current email is already taken.");
+            RuleFor(x => x.Email).EmailAddress().NotEmpty().WithMessage($"Current email is invalid.");
 
-            //RuleFor(x => x.Password).NotNull().MinimumLength(5).MaximumLength(20);
+            RuleFor(x => x.Password).NotNull().MinimumLength(6).MaximumLength(20);
         }
     }
 }
