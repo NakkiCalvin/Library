@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Library",
+    "\\Library\\API",
+    "\\Library\\BLL",
+    "\\Library\\DAL",
+    "\\Library\\XUnitTest"
+  ],
+  "SelectedNode": "\\Library\\DAL\\Finder.cs",
+  "PreviewInSolutionExplorer": false
+}
