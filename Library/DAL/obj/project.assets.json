@@ -2988,11 +2988,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\Vladimir.Dyatchik\\.nuget\\packages\\",
-      "outputPath": "d:\\Repositorys\\LibraryApplication\\Library\\DAL\\obj\\",
+      "outputPath": "D:\\Repositorys\\LibraryApplication\\Library\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3011,8 +3011,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
-              "projectPath": "d:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
+            "D:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\Repositorys\\LibraryApplication\\Library\\BLL\\BLL.csproj"
             }
           }
         }
