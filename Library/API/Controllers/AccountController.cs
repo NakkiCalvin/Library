@@ -53,8 +53,8 @@ namespace API.Controllers
 
             var mapUser = Mapper.Map<RegisterUserModel, User>(model);
             mapUser.Id = Guid.NewGuid();
-            await _userManager.CreateUser(mapUser, model.Password);
-            await _userManager.AddToRole(mapUser, "User");
+            var ir = await _userManager.CreateUser(mapUser, model.Password);
+            var rere = await _userManager.AddToRole(mapUser, "User");
             return Ok(mapUser);
         }
 
@@ -70,10 +70,7 @@ namespace API.Controllers
             }
 
             var result = await _signInManager.CheckPass(actualUser, authorize.Password, false);
-            if (!result.Succeeded)
-            {
-                return BadRequest("Wrong Password");
-            }
+
 
             var configuredToken = new
             {
@@ -81,6 +78,7 @@ namespace API.Controllers
                 userEmail = actualUser.Email,
                 id = actualUser.Id
             };
+
             return configuredToken;
         }
 
