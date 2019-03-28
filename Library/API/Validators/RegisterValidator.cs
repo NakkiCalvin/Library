@@ -12,7 +12,11 @@ namespace API.Validators
     {
         public RegisterValidator(IUserManager userManager, ISignInManager signInManager)
         {
-            RuleFor(x => x.Email).EmailAddress().NotEmpty().WithMessage($"Current email is invalid.");
+            RuleFor(x => x.Email).EmailAddress().NotEmpty().WithMessage($"Current email is invalid.").MustAsync(async (model, email, context) =>
+            {
+                var userResult = await userManager.GetUserByEmail(email);
+                return userResult == null;
+            }).WithMessage("Email already exists"); ;
 
             RuleFor(x => x.Password).NotNull().MinimumLength(6).MaximumLength(20);
         }
