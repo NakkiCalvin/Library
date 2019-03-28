@@ -46,11 +46,6 @@ namespace API.Controllers
         [Route("Register")]
         public async Task<IActionResult> Register(RegisterUserModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var mapUser = Mapper.Map<RegisterUserModel, User>(model);
             mapUser.Id = Guid.NewGuid();
             var ir = await _userManager.CreateUser(mapUser, model.Password);
@@ -60,22 +55,12 @@ namespace API.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<object> GenerateToken(RegisterUserModel authorize)
+        public async Task<object> GenerateToken(LoginModel authorize)
         {
-
-            User actualUser = await _userManager.GetUserByEmail(authorize.Email);
-            if (actualUser == null)
-            {
-                return BadRequest("This user does not exists");
-            }
-
-            var result = await _signInManager.CheckPass(actualUser, authorize.Password, false);
-
-
             var configuredToken = new
             {
                 access_token = _tokenService.GetEncodedJwtToken(authorize.Email),
-                userEmail = actualUser.Email,
+                userEmail = authorize.Email,
             };
 
             return configuredToken;

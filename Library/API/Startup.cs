@@ -52,6 +52,7 @@ namespace API
                 {
                     fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>();
                     fv.RegisterValidatorsFromAssemblyContaining<BookValidator>();
+                    fv.RegisterValidatorsFromAssemblyContaining<LoginValidator>();
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -71,15 +72,6 @@ namespace API
                 .AddDefaultTokenProviders();
 
             services.AddScoped(x => x.GetRequiredService<ApplicationContext>().Books);
-            //services.AddScoped<ITokenService, TokenService>();
-            //services.AddScoped<IRoleManager, RoleService>();
-            //services.AddScoped<IUserManager, UserService>();
-            //services.AddScoped<ISignInManager, SignInService>();
-            //services.AddScoped<IBookService, BookService>();
-            //services.AddScoped<IBookFinder, BookFinder>();
-            //services.AddScoped<IRepository<Book>, Repository<Book>>();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<TokenConfig>();
 
             services.AddCors(options =>
             {
