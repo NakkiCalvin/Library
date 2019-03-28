@@ -5,7 +5,7 @@ using Autofac;
 
 namespace BLL
 {
-    public class BllModules : Module
+    public class BLLModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
