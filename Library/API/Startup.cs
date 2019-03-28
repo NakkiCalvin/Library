@@ -115,8 +115,8 @@ namespace API
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule<BllModules>();
-            builder.RegisterModule<DalModules>();
+            builder.RegisterModule<BLLModules>();
+            builder.RegisterModule<DALModules>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

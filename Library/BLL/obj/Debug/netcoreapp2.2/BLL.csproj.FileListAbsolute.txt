@@ -11,7 +11,6 @@ D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\Microsoft.
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.Configuration.ConfigurationManager.xml
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
 D:\Repositorys\LibraryApplication\Library\BLL\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
-D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CoreCompileInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfoInputs.cache
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.AssemblyInfo.cs
