@@ -7,6 +7,7 @@ using BLL.Entities;
 using BLL.Managers;
 using BLL.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
 
@@ -15,9 +16,13 @@ namespace APITests.UserTests
     public class ControllerTests
     {
         private static Mock<IUserManager> _mockedManager = new Mock<IUserManager>();
+
         private static Mock<ISignInManager> _mockedSignInManager = new Mock<ISignInManager>();
+
         private static Mock<IRoleManager> _mockedRoleManager = new Mock<IRoleManager>();
+
         private static Mock<ITokenService> _mockedTokenManager = new Mock<ITokenService>();
+
         AccountController _controller = new AccountController(_mockedManager.Object, _mockedSignInManager.Object, _mockedRoleManager.Object, _mockedTokenManager.Object);
 
         [Fact]
@@ -30,10 +35,11 @@ namespace APITests.UserTests
 
             _mockedManager.Setup(p => p.CreateUser(user, "Qqqqqqqq12_")).Returns(Task.FromResult(new IdentityResult()));
 
-            var model = new RegisterUserModel {Email = user.Email, Password = "Qqqqqqqq12_" };
+            var model = new RegisterUserModel { Email = "aaaa@gmail.com", Password = "Qqqqqqqq12_" };
 
             var result = await _controller.Register(model);
 
+            Assert.IsAssignableFrom<ActionResult>(result);
             Assert.NotNull(result);
             _mockedManager.Verify(x => x.CreateUser(It.IsAny<User>(), It.Is<string>(pass => pass == "Qqqqqqqq12_")), Times.Once);
         }
@@ -83,9 +89,17 @@ namespace APITests.UserTests
         [Fact]
         public async Task Logout()
         {
+            _mockedSignInManager.Setup(x => x.Logout()).Returns(Task.CompletedTask);
             await _controller.Logout();
             _mockedSignInManager.Verify(x => x.Logout(), Times.Once);
         }
 
+        [Fact]
+        public async Task CheckLogin()
+        {
+            LoginModel model = new LoginModel() { Email = "vovanss@gmail.com", Password = "Djdfy123_"};
+            var result = await _controller.GenerateToken(model);
+            _mockedTokenManager.Verify(x => x.GetEncodedJwtToken(model.Email), Times.Once);
+        }
     }
 }

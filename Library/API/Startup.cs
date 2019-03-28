@@ -111,13 +111,12 @@ namespace API
                         ValidateIssuerSigningKey = true,
                     };
                 });
-
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule<BLLModules>();
-            builder.RegisterModule<DALModules>();
+            builder.RegisterModule<BllModules>();
+            builder.RegisterModule<DalModules>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
