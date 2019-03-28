@@ -1,3 +1,4 @@
+D:\Repositorys\LibraryApplication\Library\APITests\bin\Debug\netcoreapp2.2\nlog.config
 D:\Repositorys\LibraryApplication\Library\APITests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 D:\Repositorys\LibraryApplication\Library\APITests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
 D:\Repositorys\LibraryApplication\Library\APITests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll

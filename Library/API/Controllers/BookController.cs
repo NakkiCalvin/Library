@@ -10,6 +10,7 @@ using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
@@ -20,23 +21,35 @@ namespace API.Controllers
     {
         private readonly IUserManager _userManager;
         private readonly IBookService _bookService;
+        private readonly ILogger<BookController> _logger;
 
-        public BookController(IUserManager userManager, IBookService bookService)
+        public BookController(IUserManager userManager, IBookService bookService, ILogger<BookController> logger)
         {
             _bookService = bookService;
             _userManager = userManager;
+            _logger = logger;
         }
 
         [Route("GetAll")]
         [HttpGet]
         public async Task<Book[]> GetBooks()
         {
-            var identity = (ClaimsIdentity) this.User.Identity;
-            var userEmail = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
-            var user = await _userManager.GetUserByEmail(userEmail);
+            var user = await GetActualUser();
+            _logger.LogInformation($"Getting {user.Email} books...");
             IEnumerable<Book> userBookList = _bookService.GetAll(user.Id);
             Book[] books = userBookList.ToArray();
+            _logger.LogInformation($"{user.Email} books was successfully found");
             return books;
+        }
+
+        public async Task<User> GetActualUser()
+        {
+            _logger.LogInformation("Getting actual User...");
+            var identity = (ClaimsIdentity)this.User.Identity;
+            var userEmail = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
+            var user = await _userManager.GetUserByEmail(userEmail);
+            _logger.LogInformation($"actual User is {user.Email}");
+            return user;
         }
 
         [Route("Get")]
@@ -48,13 +61,17 @@ namespace API.Controllers
 
         [Route("Update")]
         [HttpPost]
-        public ActionResult<Book> UpdateBook(RequestBookModel book)
+        public async Task<Book> UpdateBook(RequestBookModel book)
         {
             if (book != null)
             {
+                var user = await GetActualUser();
+                _logger.LogInformation($"{user.Email} trying to update {book.BookId}");
+
                 Book actualBook = _bookService.GetBook(book.BookId);
                 Mapper.Map(book, actualBook);
                 _bookService.Update(actualBook);
+                _logger.LogInformation($"{user.Email} successfully updated {book.BookId}");
                 return actualBook;
             }
 
@@ -67,15 +84,15 @@ namespace API.Controllers
         {
             if (book.Content != null)
             {
-                var identity = (ClaimsIdentity) this.User.Identity;
-
-                var currentUserName = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
-                var user = await _userManager.GetUserByEmail(currentUserName);
+                var user = await GetActualUser();
+                _logger.LogInformation($"{user.Email} trying to Add new book");
 
                 Book newBook = Mapper.Map<RequestBookModel, Book>(book);
                 newBook.AuthorId = user.Id.ToString();
                 newBook.ReleaseDate = DateTime.Now;
                 _bookService.Create(newBook);
+
+                _logger.LogInformation($"{newBook.Title} was created by {user.Email}");
                 return Ok(newBook);
             }
 
@@ -84,13 +101,14 @@ namespace API.Controllers
 
         [Route("Delete/{id}")]
         [HttpPost]
-        public int DeleteBook(int id)
+        public async Task<int> DeleteBook(int id)
         {
+            var user = await GetActualUser();
+            _logger.LogInformation($"Deleting Book by {user.Email}");
             var book = _bookService.GetBook(id);
             _bookService.Delete(book);
-
+            _logger.LogInformation($"{book.Title} was deleted by {user.Email}");
             return id;
         }
-
     }
 }

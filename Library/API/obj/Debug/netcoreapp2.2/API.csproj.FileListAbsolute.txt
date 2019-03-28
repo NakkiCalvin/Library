@@ -1,3 +1,4 @@
+D:\Repositorys\LibraryApplication\Library\API\bin\Debug\netcoreapp2.2\nlog.config
 D:\Repositorys\LibraryApplication\Library\API\bin\Debug\netcoreapp2.2\API.deps.json
 D:\Repositorys\LibraryApplication\Library\API\bin\Debug\netcoreapp2.2\API.runtimeconfig.json
 D:\Repositorys\LibraryApplication\Library\API\bin\Debug\netcoreapp2.2\API.runtimeconfig.dev.json

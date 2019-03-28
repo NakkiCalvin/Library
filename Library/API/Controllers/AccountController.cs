@@ -6,6 +6,7 @@ using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
@@ -18,18 +19,21 @@ namespace API.Controllers
         private readonly IUserManager _userManager;
         private readonly IRoleManager _roleManager;
         private readonly ITokenService _tokenService;
+        private readonly ILogger<AccountController> _logger;
 
         public AccountController(
             IUserManager userManager,
             ISignInManager signInManager,
             IRoleManager roleManager,
-            ITokenService tokenService
+            ITokenService tokenService,
+            ILogger<AccountController> logger
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _tokenService = tokenService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -37,29 +41,37 @@ namespace API.Controllers
         public async Task Logout()
         {
             await _signInManager.Logout();
+            _logger.LogInformation("User logged out");
         }
 
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register(RegisterUserModel model)
         {
+            _logger.LogInformation($"{model.Email}, registration processing...");
+
             var mapUser = Mapper.Map<RegisterUserModel, User>(model);
             mapUser.Id = Guid.NewGuid();
-            var ir = await _userManager.CreateUser(mapUser, model.Password);
-            var rere = await _userManager.AddToRole(mapUser, "User");
+
+            await _userManager.CreateUser(mapUser, model.Password);
+            await _userManager.AddToRole(mapUser, "User");
+
+            _logger.LogInformation($"Registration finished Successfully. EMAIL: {model.Email}, PASS: {model.Password} ");
+
             return Ok(mapUser);
         }
 
         [HttpPost]
         [Route("Login")]
-        public async Task<object> GenerateToken(LoginModel authorize)
+        public object GenerateToken(LoginModel authorize)
         {
+            _logger.LogInformation($"{authorize.Email} started to logging in...");
             var configuredToken = new
             {
                 access_token = _tokenService.GetEncodedJwtToken(authorize.Email),
                 userEmail = authorize.Email,
             };
-
+            _logger.LogInformation($"{authorize.Email} successfully logging in...");
             return configuredToken;
         }
 
@@ -67,10 +79,12 @@ namespace API.Controllers
         [Route("CreateRole")]
         public async Task<RoleModel> Create(RoleModel roleModel)
         {
+            _logger.LogInformation($"Creating {roleModel.Name} role...");
             roleModel.Id = Guid.NewGuid();
 
             await _roleManager.AddRole((Role)roleModel);
 
+            _logger.LogInformation($"{roleModel.Name} was successfully created.");
             return roleModel;
         }
     }

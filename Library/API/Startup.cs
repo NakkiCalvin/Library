@@ -111,7 +111,6 @@ namespace API
                         ValidateIssuerSigningKey = true,
                     };
                 });
-
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

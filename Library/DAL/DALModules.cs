@@ -4,7 +4,7 @@ using DAL.Context;
 
 namespace DAL
 {
-    public class DalModules : Module
+    public class DALModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
