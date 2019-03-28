@@ -15,7 +15,6 @@ namespace DALTest.BookTests
 
         public ApplicationContext context = new ApplicationContext(options);
 
-
         [Fact]
         public void CheckWriteToBase()
         {
@@ -41,8 +40,6 @@ namespace DALTest.BookTests
             context.SaveChanges();
             context.Books.Remove(book);
             context.SaveChanges();
-
-            //Assert.IsAssignableFrom<IQueryable<Book>>(context.Books);
 
             Assert.Null(context.Books.Where(p => p.Title == "Cake2"));
         }

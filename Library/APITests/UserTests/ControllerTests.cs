@@ -74,13 +74,10 @@ namespace APITests.UserTests
         {
             _mockedManager.Setup(x => x.GetUserByEmail("vova@gmail.com")).Returns(Task.FromResult(new User()));
 
-            var logmodel = new RegisterUserModel {Email = "vova@gmail.com", Password = "fafafa1sfAAa_" };
+            var logmodel = new LoginModel {Email = "vova@gmail.com", Password = "fafafa1sfAAa_" };
             var res = await _controller.GenerateToken(logmodel);
 
             _mockedTokenManager.Verify(x => x.GetEncodedJwtToken(logmodel.Email), Times.Once);
-            //_mockedManager.Setup(x => x.GetUserByEmail(user.Email)).Returns(Task.FromResult(new User()));
-
-            //_mockedManager.Verify(x => x.GetUserByEmail(It.IsAny<string>()), Times.Once);
         }
 
         [Fact]

@@ -10,7 +10,6 @@ namespace BLLTests.BookTests
 {
     public class BookServiceTests
     {
-    
         static readonly Mock<IRepository<Book>> _reposMock = new Mock<IRepository<Book>>();
         static readonly Mock<IUnitOfWork> _unitMock = new Mock<IUnitOfWork>();
         static readonly Mock<IBookFinder> _finderMock = new Mock<IBookFinder>();

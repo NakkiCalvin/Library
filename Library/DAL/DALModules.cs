@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
+﻿using Autofac;
 using BLL.Entities;
 using DAL.Context;
 
 namespace DAL
 {
-    public class DALModules : Module
+    public class DalModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

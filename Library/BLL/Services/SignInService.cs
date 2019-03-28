@@ -31,10 +31,5 @@ namespace BLL.Services
         {
             throw new NotImplementedException();
         }
-
-        //public async Task<SignInResult> LogIn(User user, bool isPers)
-        // {
-        //await _manager.SignInAsync(user, isPers);
-        // }
     }
 }

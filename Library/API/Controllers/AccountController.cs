@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using API.Mapping;
 using API.Requests;
-using API.Responses;
 using AutoMapper;
 using BLL.Entities;
 using BLL.Managers;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers

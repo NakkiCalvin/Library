@@ -8,9 +8,7 @@ using API.Requests;
 using AutoMapper;
 using BLL.Entities;
 using BLL.Managers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -56,8 +54,6 @@ namespace API.Controllers
             {
                 Book actualBook = _bookService.GetBook(book.BookId);
                 Mapper.Map(book, actualBook);
-                //actualBook.Title = book.Title;
-                //actualBook.Content = book.Content;
                 _bookService.Update(actualBook);
                 return actualBook;
             }
