@@ -9,6 +9,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using NLog;
 using NLog.Web;
 
 namespace API
@@ -17,6 +18,7 @@ namespace API
     {
         public static void Main(string[] args)
         {
+            GlobalDiagnosticsContext.Set("connectionString", "Data Source=ESW376;Initial Catalog=BookAppDb;Integrated Security=True;");
             var logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
             try
             {

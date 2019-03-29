@@ -17,3 +17,4 @@ D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.Assemb
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csproj.CopyComplete
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.dll
 D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.pdb
+D:\Repositorys\LibraryApplication\Library\BLL\obj\Debug\netcoreapp2.2\BLL.csprojAssemblyReference.cache

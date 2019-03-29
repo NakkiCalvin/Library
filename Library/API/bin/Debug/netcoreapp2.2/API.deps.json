@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "b4a566b46dd34f9325bdbb08a08cc965e88a8b73"
+    "signature": "e94d307a4f3cba6b4eed8f402407043378c0058f"
   },
   "compilationOptions": {
     "defines": [
@@ -34,7 +34,10 @@
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
           "NLog": "4.6.0",
-          "NLog.Web.AspNetCore": "4.8.1"
+          "NLog.Config": "4.6.0",
+          "NLog.Extensions.Logging": "1.4.0",
+          "NLog.Web.AspNetCore": "4.8.1",
+          "System.Data.SqlClient": "4.6.0"
         },
         "runtime": {
           "API.dll": {}
@@ -579,6 +582,12 @@
           "lib/netstandard2.0/NLog.dll": {}
         }
       },
+      "NLog.Config/4.6.0": {
+        "dependencies": {
+          "NLog": "4.6.0",
+          "NLog.Schema": "4.6.0"
+        }
+      },
       "NLog.Extensions.Logging/1.4.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "2.2.0",
@@ -594,6 +603,7 @@
           "lib/netstandard2.0/NLog.Extensions.Logging.dll": {}
         }
       },
+      "NLog.Schema/4.6.0": {},
       "NLog.Web.AspNetCore/4.8.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
@@ -3952,12 +3962,26 @@
       "path": "nlog/4.6.0",
       "hashPath": "nlog.4.6.0.nupkg.sha512"
     },
+    "NLog.Config/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7ZKFwTic2vhqVxBpTKyRYhmKg8wbrwQo1xo1ebKUNrm8RWtZUz0hDyn184YZTPG6H0uWvxhg/U0kboUWoDcAzA==",
+      "path": "nlog.config/4.6.0",
+      "hashPath": "nlog.config.4.6.0.nupkg.sha512"
+    },
     "NLog.Extensions.Logging/1.4.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-XughK7kRM1b+IuG4bZEpShHLweTCRNQb4kDUMsiob03QVpnacgcis6wDS0KlyXYaF/3Itid5b8+VbTBeP4WKhA==",
       "path": "nlog.extensions.logging/1.4.0",
       "hashPath": "nlog.extensions.logging.1.4.0.nupkg.sha512"
+    },
+    "NLog.Schema/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RO9zAfdTrviAttY4qVsAh+Mb+znfkw2Tq+XMk4QK7Z6g/e+7RcoyNaYARmyGJ/HgAnLqsq48U22czJkz0A4t7A==",
+      "path": "nlog.schema/4.6.0",
+      "hashPath": "nlog.schema.4.6.0.nupkg.sha512"
     },
     "NLog.Web.AspNetCore/4.8.1": {
       "type": "package",

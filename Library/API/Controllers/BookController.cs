@@ -35,20 +35,20 @@ namespace API.Controllers
         public async Task<Book[]> GetBooks()
         {
             var user = await GetActualUser();
-            _logger.LogInformation($"Getting {user.Email} books...");
+            _logger.LogTrace($"Getting {user.Email} books...");
             IEnumerable<Book> userBookList = _bookService.GetAll(user.Id);
             Book[] books = userBookList.ToArray();
-            _logger.LogInformation($"{user.Email} books was successfully found");
+            _logger.LogTrace($"{user.Email} books was successfully found");
             return books;
         }
 
         public async Task<User> GetActualUser()
         {
-            _logger.LogInformation("Getting actual User...");
+            _logger.LogTrace("Getting actual User...");
             var identity = (ClaimsIdentity)this.User.Identity;
             var userEmail = identity.FindFirst(JwtRegisteredClaimNames.Sub).Value;
             var user = await _userManager.GetUserByEmail(userEmail);
-            _logger.LogInformation($"actual User is {user.Email}");
+            _logger.LogTrace($"actual User is {user.Email}");
             return user;
         }
 
@@ -66,12 +66,12 @@ namespace API.Controllers
             if (book != null)
             {
                 var user = await GetActualUser();
-                _logger.LogInformation($"{user.Email} trying to update {book.BookId}");
+                _logger.LogTrace($"{user.Email} trying to update {book.BookId}");
 
                 Book actualBook = _bookService.GetBook(book.BookId);
                 Mapper.Map(book, actualBook);
                 _bookService.Update(actualBook);
-                _logger.LogInformation($"{user.Email} successfully updated {book.BookId}");
+                _logger.LogTrace($"{user.Email} successfully updated {book.BookId}");
                 return actualBook;
             }
 
@@ -85,14 +85,14 @@ namespace API.Controllers
             if (book.Content != null)
             {
                 var user = await GetActualUser();
-                _logger.LogInformation($"{user.Email} trying to Add new book");
+                _logger.LogTrace($"{user.Email} trying to Add new book");
 
                 Book newBook = Mapper.Map<RequestBookModel, Book>(book);
                 newBook.AuthorId = user.Id.ToString();
                 newBook.ReleaseDate = DateTime.Now;
                 _bookService.Create(newBook);
 
-                _logger.LogInformation($"{newBook.Title} was created by {user.Email}");
+                _logger.LogTrace($"{newBook.Title} was created by {user.Email}");
                 return Ok(newBook);
             }
 
@@ -104,10 +104,10 @@ namespace API.Controllers
         public async Task<int> DeleteBook(int id)
         {
             var user = await GetActualUser();
-            _logger.LogInformation($"Deleting Book by {user.Email}");
+            _logger.LogTrace($"Deleting Book by {user.Email}");
             var book = _bookService.GetBook(id);
             _bookService.Delete(book);
-            _logger.LogInformation($"{book.Title} was deleted by {user.Email}");
+            _logger.LogTrace($"{book.Title} was deleted by {user.Email}");
             return id;
         }
     }
