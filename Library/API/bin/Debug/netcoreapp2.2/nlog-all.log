@@ -1929,3 +1929,16 @@ WHERE [x].[AuthorId] = @__ToString_0
 2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Logout (API) in 21.2683ms 
 2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Logout (API)' 
 2019-04-02 14:12:37.6949||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 76.0456ms 200  
+2019-04-02 14:44:22.0917||API.Program|DEBUG|init 
+2019-04-02 14:44:25.7934||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INFO|User profile is available. Using 'C:\Users\Vladimir.Dyatchik\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-04-02 14:44:28.4122||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:44:29.1347||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0 
+2019-04-02 14:44:29.2854||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0 
+2019-04-02 14:44:29.4660||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/   
+2019-04-02 14:44:29.6675||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 202.1757ms 404  

@@ -145,7 +145,6 @@ namespace API
             app.UseCors("Policy");
             
 
-            
             app.UseMvc(route =>
             {
                 route.MapRoute("default", "controller/action/{id}");
