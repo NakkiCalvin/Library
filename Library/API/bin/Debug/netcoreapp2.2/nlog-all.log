@@ -1608,3 +1608,324 @@ WHERE [x].[AuthorId] = @__ToString_0
 2019-03-29 15:32:37.5765||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Logout (API) in 107.445ms 
 2019-03-29 15:32:37.5765||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Logout (API)' 
 2019-03-29 15:32:37.5947||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 166.1753ms 200  
+2019-04-02 14:11:45.9947||API.Program|DEBUG|init 
+2019-04-02 14:11:54.6626||Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INFO|User profile is available. Using 'C:\Users\Vladimir.Dyatchik\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-04-02 14:11:57.6999||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:11:58.5996||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (153ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0 
+2019-04-02 14:11:58.8768||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0 
+2019-04-02 14:11:59.1824||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/   
+2019-04-02 14:11:59.4450||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 263.9155ms 404  
+2019-04-02 14:12:07.6675||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Account/Login   
+2019-04-02 14:12:07.6842||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:07.7048||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 37.2912ms 204  
+2019-04-02 14:12:07.7125||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Account/Login application/json 52 
+2019-04-02 14:12:07.7967||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:07.9018||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:08.0136||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GenerateToken", controller = "Account"}. Executing action API.Controllers.AccountController.GenerateToken (API) 
+2019-04-02 14:12:08.0136||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:08.4710||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:08.7195||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (48ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:08.8355||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:08.9608||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.GenerateToken (API) with arguments (API.Requests.LoginModel) - Validation state: Valid 
+2019-04-02 14:12:09.1099||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.GenerateToken (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 138.3324ms. 
+2019-04-02 14:12:09.1310||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2019-04-02 14:12:09.1701||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.GenerateToken (API) in 1149.1127ms 
+2019-04-02 14:12:09.1701||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:09.1701||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 1466.5924ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:09.3164||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Books/GetAll   
+2019-04-02 14:12:09.3434||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:09.3434||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 33.0195ms 204  
+2019-04-02 14:12:09.3915||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Books/GetAll application/json  
+2019-04-02 14:12:09.4456||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:09.4684||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:09.4684||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:09.4888||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GetBooks", controller = "Book"}. Executing action API.Controllers.BookController.GetBooks (API) 
+2019-04-02 14:12:09.4928||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:09.4928||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.GetBooks (API) - Validation state: Valid 
+2019-04-02 14:12:09.5405||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:09.5538||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:09.6160||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (10ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[AuthorId] = @__ToString_0 
+2019-04-02 14:12:09.7087||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.GetBooks (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 175.5597ms. 
+2019-04-02 14:12:09.7171||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.Book[]'. 
+2019-04-02 14:12:09.7444||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.GetBooks (API) in 251.7525ms 
+2019-04-02 14:12:09.7671||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:09.7996||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 408.1386ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:14.3316||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Books/Update   
+2019-04-02 14:12:14.3365||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:14.3809||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 49.3928ms 204  
+2019-04-02 14:12:14.3866||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Books/Update application/json 165 
+2019-04-02 14:12:14.3983||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:14.3983||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:14.3983||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.UpdateBook (API)' 
+2019-04-02 14:12:14.4411||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "UpdateBook", controller = "Book"}. Executing action API.Controllers.BookController.UpdateBook (API) 
+2019-04-02 14:12:14.4730||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:14.5149||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.UpdateBook (API) with arguments (API.Requests.RequestBookModel) - Validation state: Valid 
+2019-04-02 14:12:14.5236||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:14.5644||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:14.6035||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[BookId] = @__id_0 
+2019-04-02 14:12:14.9129||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (72ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [AuthorId] = @p0, [Content] = @p1, [ReleaseDate] = @p2, [Title] = @p3
+WHERE [BookId] = @p4;
+SELECT @@ROWCOUNT; 
+2019-04-02 14:12:14.9510||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.UpdateBook (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 430.4595ms. 
+2019-04-02 14:12:14.9510||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.Book'. 
+2019-04-02 14:12:14.9619||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.UpdateBook (API) in 488.9814ms 
+2019-04-02 14:12:14.9865||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.UpdateBook (API)' 
+2019-04-02 14:12:15.0041||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 617.523ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:16.1175||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Books/Delete/1038   
+2019-04-02 14:12:16.1175||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.1175||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 12.9931ms 204  
+2019-04-02 14:12:16.1613||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Books/Delete/1038 application/json 4 
+2019-04-02 14:12:16.1688||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:16.1688||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.1821||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.DeleteBook (API)' 
+2019-04-02 14:12:16.2201||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "DeleteBook", controller = "Book"}. Executing action API.Controllers.BookController.DeleteBook (API) 
+2019-04-02 14:12:16.2351||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.2497||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.DeleteBook (API) with arguments (1038) - Validation state: Valid 
+2019-04-02 14:12:16.2574||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:16.2750||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:16.2996||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[BookId] = @__id_0 
+2019-04-02 14:12:16.3498||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Books]
+WHERE [BookId] = @p0;
+SELECT @@ROWCOUNT; 
+2019-04-02 14:12:16.3756||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.DeleteBook (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 121.1299ms. 
+2019-04-02 14:12:16.3914||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'System.Int32'. 
+2019-04-02 14:12:16.3914||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.DeleteBook (API) in 161.0152ms 
+2019-04-02 14:12:16.4011||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.DeleteBook (API)' 
+2019-04-02 14:12:16.4011||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 244.3233ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:16.7090||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Books/GetAll   
+2019-04-02 14:12:16.7292||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.7292||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 31.0384ms 204  
+2019-04-02 14:12:16.7884||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Books/GetAll application/json  
+2019-04-02 14:12:16.8286||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:16.8383||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.8832||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:16.9180||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GetBooks", controller = "Book"}. Executing action API.Controllers.BookController.GetBooks (API) 
+2019-04-02 14:12:16.9368||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:16.9520||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.GetBooks (API) - Validation state: Valid 
+2019-04-02 14:12:16.9689||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:17.0146||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (27ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:17.0399||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (3ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[AuthorId] = @__ToString_0 
+2019-04-02 14:12:17.0706||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.GetBooks (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 102.1691ms. 
+2019-04-02 14:12:17.0706||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.Book[]'. 
+2019-04-02 14:12:17.1249||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.GetBooks (API) in 188.0974ms 
+2019-04-02 14:12:17.1532||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:17.1669||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 378.5191ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:18.7844||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Account/LogOut   
+2019-04-02 14:12:18.7892||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:18.8030||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:18.8210||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "Logout", controller = "Account"}. Executing action API.Controllers.AccountController.Logout (API) 
+2019-04-02 14:12:18.8210||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:18.8210||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.Logout (API) - Validation state: Valid 
+2019-04-02 14:12:18.8768||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.Application signed out. 
+2019-04-02 14:12:18.8848||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.External signed out. 
+2019-04-02 14:12:18.8848||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.TwoFactorUserId signed out. 
+2019-04-02 14:12:18.8848||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.Logout (API), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 55.1215ms. 
+2019-04-02 14:12:18.8994||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Logout (API) in 70.563ms 
+2019-04-02 14:12:18.8994||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:18.8994||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 127.7681ms 200  
+2019-04-02 14:12:26.3327||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Account/Register   
+2019-04-02 14:12:26.3497||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:26.3551||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 22.3458ms 204  
+2019-04-02 14:12:26.3551||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Account/Register application/json 55 
+2019-04-02 14:12:26.3673||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:26.3673||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.Register (API)' 
+2019-04-02 14:12:26.3871||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "Register", controller = "Account"}. Executing action API.Controllers.AccountController.Register (API) 
+2019-04-02 14:12:26.3871||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:26.4114||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:26.4210||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:26.4210||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.Register (API) with arguments (API.Requests.RegisterUserModel) - Validation state: Valid 
+2019-04-02 14:12:26.4921||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:26.6208||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (34ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14); 
+2019-04-02 14:12:26.7000||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+2019-04-02 14:12:26.7820||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (DbType = Guid), @__get_Item_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) 
+2019-04-02 14:12:26.7966||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 
+2019-04-02 14:12:26.8300||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:26.8737||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1); 
+2019-04-02 14:12:26.8860||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (7ms) [Parameters=[@p14='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT; 
+2019-04-02 14:12:26.8977||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.Register (API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 466.3841ms. 
+2019-04-02 14:12:26.8977||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.User'. 
+2019-04-02 14:12:26.9219||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Register (API) in 527.6548ms 
+2019-04-02 14:12:26.9279||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Register (API)' 
+2019-04-02 14:12:26.9489||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 586.4158ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:32.3160||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Account/Login   
+2019-04-02 14:12:32.3209||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.3209||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 8.3034ms 204  
+2019-04-02 14:12:32.3209||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Account/Login application/json 55 
+2019-04-02 14:12:32.3791||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.3821||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:32.3821||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GenerateToken", controller = "Account"}. Executing action API.Controllers.AccountController.GenerateToken (API) 
+2019-04-02 14:12:32.3821||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.4021||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:32.4021||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:32.4021||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:32.4289||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.GenerateToken (API) with arguments (API.Requests.LoginModel) - Validation state: Valid 
+2019-04-02 14:12:32.4289||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.GenerateToken (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.422ms. 
+2019-04-02 14:12:32.4289||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2019-04-02 14:12:32.4289||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.GenerateToken (API) in 46.453ms 
+2019-04-02 14:12:32.4479||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:32.4479||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 119.4774ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:32.4940||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 OPTIONS https://localhost:44326/Books/GetAll   
+2019-04-02 14:12:32.5129||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.5129||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 23.5465ms 204  
+2019-04-02 14:12:32.5295||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Books/GetAll application/json  
+2019-04-02 14:12:32.5382||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:32.5544||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.5544||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:32.5702||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GetBooks", controller = "Book"}. Executing action API.Controllers.BookController.GetBooks (API) 
+2019-04-02 14:12:32.5702||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:32.5702||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.GetBooks (API) - Validation state: Valid 
+2019-04-02 14:12:32.5850||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:32.5850||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:32.5850||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (2ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[AuthorId] = @__ToString_0 
+2019-04-02 14:12:32.6034||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.GetBooks (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 18.8056ms. 
+2019-04-02 14:12:32.6034||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.Book[]'. 
+2019-04-02 14:12:32.6034||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.GetBooks (API) in 36.7584ms 
+2019-04-02 14:12:32.6183||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:32.6183||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 94.057ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:34.8609||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Account/LogOut   
+2019-04-02 14:12:34.9189||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:34.9189||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:34.9290||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "Logout", controller = "Account"}. Executing action API.Controllers.AccountController.Logout (API) 
+2019-04-02 14:12:34.9290||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:34.9290||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.Logout (API) - Validation state: Valid 
+2019-04-02 14:12:34.9450||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.Application signed out. 
+2019-04-02 14:12:34.9450||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.External signed out. 
+2019-04-02 14:12:34.9450||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.TwoFactorUserId signed out. 
+2019-04-02 14:12:34.9615||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.Logout (API), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 16.9678ms. 
+2019-04-02 14:12:34.9615||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Logout (API) in 29.3689ms 
+2019-04-02 14:12:34.9615||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:34.9615||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 110.6485ms 200  
+2019-04-02 14:12:36.1151||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 POST https://localhost:44326/Account/Login application/json 52 
+2019-04-02 14:12:36.1188||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:36.1188||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:36.1188||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GenerateToken", controller = "Account"}. Executing action API.Controllers.AccountController.GenerateToken (API) 
+2019-04-02 14:12:36.1188||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:36.1188||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:36.1355||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:36.1355||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:36.1544||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.GenerateToken (API) with arguments (API.Requests.LoginModel) - Validation state: Valid 
+2019-04-02 14:12:36.1544||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.GenerateToken (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.2358ms. 
+2019-04-02 14:12:36.1631||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2019-04-02 14:12:36.1631||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.GenerateToken (API) in 40.2622ms 
+2019-04-02 14:12:36.1631||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.GenerateToken (API)' 
+2019-04-02 14:12:36.1631||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 60.9504ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:36.2247||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Books/GetAll application/json  
+2019-04-02 14:12:36.2280||Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|INFO|Successfully validated the token. 
+2019-04-02 14:12:36.2416||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:36.2416||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:36.2416||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "GetBooks", controller = "Book"}. Executing action API.Controllers.BookController.GetBooks (API) 
+2019-04-02 14:12:36.2611||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:36.2611||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.BookController.GetBooks (API) - Validation state: Valid 
+2019-04-02 14:12:36.2611||Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.2.3-servicing-35854 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2019-04-02 14:12:36.2965||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 
+2019-04-02 14:12:36.2965||Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[BookId], [x].[AuthorId], [x].[Content], [x].[ReleaseDate], [x].[Title]
+FROM [Books] AS [x]
+WHERE [x].[AuthorId] = @__ToString_0 
+2019-04-02 14:12:36.3059||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.BookController.GetBooks (API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 36.9962ms. 
+2019-04-02 14:12:36.3059||Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|INFO|Executing ObjectResult, writing value of type 'BLL.Entities.Book[]'. 
+2019-04-02 14:12:36.3059||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.BookController.GetBooks (API) in 51.532ms 
+2019-04-02 14:12:36.3059||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.BookController.GetBooks (API)' 
+2019-04-02 14:12:36.3209||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 96.2289ms 200 application/json; charset=utf-8 
+2019-04-02 14:12:37.6188||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/2.0 GET https://localhost:44326/Account/LogOut   
+2019-04-02 14:12:37.6188||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:37.6533||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:37.6533||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Route matched with {action = "Logout", controller = "Account"}. Executing action API.Controllers.AccountController.Logout (API) 
+2019-04-02 14:12:37.6631||Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution successful. 
+2019-04-02 14:12:37.6631||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method API.Controllers.AccountController.Logout (API) - Validation state: Valid 
+2019-04-02 14:12:37.6631||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.Application signed out. 
+2019-04-02 14:12:37.6631||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.External signed out. 
+2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: Identity.TwoFactorUserId signed out. 
+2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action method API.Controllers.AccountController.Logout (API), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 10.6343ms. 
+2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action API.Controllers.AccountController.Logout (API) in 21.2683ms 
+2019-04-02 14:12:37.6787||Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'API.Controllers.AccountController.Logout (API)' 
+2019-04-02 14:12:37.6949||Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 76.0456ms 200  
