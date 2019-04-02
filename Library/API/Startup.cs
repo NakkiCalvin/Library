@@ -143,7 +143,9 @@ namespace API
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseCors("Policy");
-            
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseMvc(route =>
             {
